@@ -17,7 +17,7 @@ window.onload = function() {
             '</div>' +
             '<div class="course-stats">' +
             '<div class="stat">' +
-            '<div>' + '<div class="stat-rating">' + this["Rating"] + '&nbsp' + '<img src="/images/star.png"></div></div>' +
+            '<div>' + '<div class="stat-rating">' + this["Rating"] + '&nbsp' + '<img src="images/star.png"></div></div>' +
             '<div class="stat-desc">Average Rating</div>' +
             '</div>' +
             '<div class="stat">' +
@@ -58,7 +58,7 @@ window.onload = function() {
             '</div>' +
             '<div class="course-stats">' +
             '<div class="stat">' +
-            '<div>' + '<div class="stat-rating">' + this["Rating"] + '&nbsp' + '<img src="/images/star.png"></div></div>' +
+            '<div>' + '<div class="stat-rating">' + this["Rating"] + '&nbsp' + '<img src="images/star.png"></div></div>' +
             '<div class="stat-desc">Average Rating</div>' +
             '</div>' +
             '<div class="stat">' +
@@ -99,7 +99,7 @@ window.onload = function() {
             '</div>' +
             '<div class="course-stats">' +
             '<div class="stat">' +
-            '<div>' + '<div class="stat-rating">' + this["Rating"] + '&nbsp' + '<img src="/images/star.png"></div></div>' +
+            '<div>' + '<div class="stat-rating">' + this["Rating"] + '&nbsp' + '<img src="images/star.png"></div></div>' +
             '<div class="stat-desc">Average Rating</div>' +
             '</div>' +
             '<div class="stat">' +
@@ -140,7 +140,7 @@ window.onload = function() {
             '</div>' +
             '<div class="course-stats">' +
             '<div class="stat">' +
-            '<div>' + '<div class="stat-rating">' + this["Rating"] + '&nbsp' + '<img src="/images/star.png"></div></div>' +
+            '<div>' + '<div class="stat-rating">' + this["Rating"] + '&nbsp' + '<img src="images/star.png"></div></div>' +
             '<div class="stat-desc">Average Rating</div>' +
             '</div>' +
             '<div class="stat">' +
@@ -181,7 +181,7 @@ window.onload = function() {
             '</div>' +
             '<div class="course-stats">' +
             '<div class="stat">' +
-            '<div>' + '<div class="stat-rating">' + this["Rating"] + '&nbsp' + '<img src="/images/star.png"></div></div>' +
+            '<div>' + '<div class="stat-rating">' + this["Rating"] + '&nbsp' + '<img src="images/star.png"></div></div>' +
             '<div class="stat-desc">Average Rating</div>' +
             '</div>' +
             '<div class="stat">' +
