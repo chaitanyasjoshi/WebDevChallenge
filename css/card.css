@@ -83,10 +83,6 @@ a {
     border-top-right-radius: unset;
 }
 
-.card:focus-within~.card, .card:hover~.card {
-    z-index: 1;
-}
-
 .card-header img {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
