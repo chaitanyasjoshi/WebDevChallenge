@@ -2,209 +2,69 @@ window.onload = function() {
     $.getJSON('CourseData.json', function(data) {
         var DevCourses = $(data).filter((i, n) => n.Category === "Developement");
         $.each(DevCourses, function(i, f) {
-            var courseList = 
-            '<article class="card">' +
-            '<div class="course-info">' +
-            '<header class="card-header">' +
-            '<img src="images/' + this["Image"] + '.jpeg"' + 'alt="course image">' +
-            '</header>' +
-            '<div class="course-name">' +
-            '<p>' + this["Name"] + '</p>' +
-            '</div>' +
-            '<div class="provider-name">' +
-            '<div class="provider-name-prefix">Instructor</div>' + 
-            this["Course provider"] +
-            '</div>' +
-            '<div class="course-stats">' +
-            '<div class="stat">' +
-            '<div>' + '<div class="stat-rating">' + this["Rating"] + '&nbsp' + '<img src="images/star.png"></div></div>' +
-            '<div class="stat-desc">Average Rating</div>' +
-            '</div>' +
-            '<div class="stat">' +
-            '<div>' + this["Enrollment"] +'</div>' +
-            '<div class="stat-desc">Students Enrolled</div>' +
-            '</div>' +
-            '<div class="stat">' +
-            '<div>' + '&#x20B9;&nbsp' + this["Price"] + '</div>' +
-            '<div class="disc"><s>' + '&#x20B9;&nbsp' + this["Discount"].slice(13,17) + '</s></div>' +
-            '<div class="stat-desc">Price</div>' +
-            '</div>' +
-            '</div>' +
-            '</div>' +
-            '<div class="course-desc hidden">' +
-            '<p class="desc-show">' + this["Description"] + '</p>' +
-            '<div>' +
-            '<button onclick="btnclick(this)" class="button">Enroll Now</button>' +
-            '</div>' +
-            '</div>' +
-            '</article>';
-            $(courseList).appendTo("#dev-card-list");
+            $(createCards(this)).appendTo("#dev-card-list");
         });
 
         var DesignCourses = $(data).filter((i, n) => n.Category === "Design");
         $.each(DesignCourses, function(i, f) {
-            var courseList = 
-            '<article class="card">' +
-            '<div class="course-info">' +
-            '<header class="card-header">' +
-            '<img src="images/' + this["Image"] + '.jpeg"' + 'alt="course image">' +
-            '</header>' +
-            '<div class="course-name">' +
-            '<p>' + this["Name"] + '</p>' +
-            '</div>' +
-            '<div class="provider-name">' +
-            '<div class="provider-name-prefix">Instructor</div>' + 
-            this["Course provider"] +
-            '</div>' +
-            '<div class="course-stats">' +
-            '<div class="stat">' +
-            '<div>' + '<div class="stat-rating">' + this["Rating"] + '&nbsp' + '<img src="images/star.png"></div></div>' +
-            '<div class="stat-desc">Average Rating</div>' +
-            '</div>' +
-            '<div class="stat">' +
-            '<div>' + this["Enrollment"] +'</div>' +
-            '<div class="stat-desc">Students Enrolled</div>' +
-            '</div>' +
-            '<div class="stat">' +
-            '<div>' + '&#x20B9;&nbsp' + this["Price"] + '</div>' +
-            '<div class="disc"><s>' + '&#x20B9;&nbsp' + this["Discount"].slice(13,17) + '</s></div>' +
-            '<div class="stat-desc">Price</div>' +
-            '</div>' +
-            '</div>' +
-            '</div>' +
-            '<div class="course-desc hidden">' +
-            '<p class="desc-show">' + this["Description"] + '</p>' +
-            '<div>' +
-            '<button onclick="btnclick(this)" class="button">Enroll Now</button>' +
-            '</div>' +
-            '</div>' +
-            '</article>';
-            $(courseList).appendTo("#design-card-list");
+            $(createCards(this)).appendTo("#design-card-list");
         });
 
         var MarketingCourses = $(data).filter((i, n) => n.Category === "Marketing");
         $.each(MarketingCourses, function(i, f) {
-            var courseList = 
-            '<article class="card card-large">' +
-            '<div class="course-info">' +
-            '<header class="card-header">' +
-            '<img src="images/' + this["Image"] + '.jpeg"' + 'alt="course image">' +
-            '</header>' +
-            '<div class="course-name">' +
-            '<p>' + this["Name"] + '</p>' +
-            '</div>' +
-            '<div class="provider-name">' +
-            '<div class="provider-name-prefix">Instructor</div>' + 
-            this["Course provider"] +
-            '</div>' +
-            '<div class="course-stats">' +
-            '<div class="stat">' +
-            '<div>' + '<div class="stat-rating">' + this["Rating"] + '&nbsp' + '<img src="images/star.png"></div></div>' +
-            '<div class="stat-desc">Average Rating</div>' +
-            '</div>' +
-            '<div class="stat">' +
-            '<div>' + this["Enrollment"] +'</div>' +
-            '<div class="stat-desc">Students Enrolled</div>' +
-            '</div>' +
-            '<div class="stat">' +
-            '<div>' + '&#x20B9;&nbsp' + this["Price"] + '</div>' +
-            '<div class="disc"><s>' + '&#x20B9;&nbsp' + this["Discount"].slice(13,17) + '</s></div>' +
-            '<div class="stat-desc">Price</div>' +
-            '</div>' +
-            '</div>' +
-            '</div>' +
-            '<div class="course-desc hidden">' +
-            '<p class="course-desc-small desc-show">' + this["Description"] + '</p>' +
-            '<div>' +
-            '<button onclick="btnclick(this)" class="button">Enroll Now</button>' +
-            '</div>' +
-            '</div>' +
-            '</article>';
-            $(courseList).appendTo("#marketing-card-list");
+            $(createCards(this)).appendTo("#marketing-card-list");
         });
 
         var BusinessCourses = $(data).filter((i, n) => n.Category === "Business");
         $.each(BusinessCourses, function(i, f) {
-            var courseList = 
-            '<article class="card card-large">' +
-            '<div class="course-info">' +
-            '<header class="card-header">' +
-            '<img src="images/' + this["Image"] + '.jpeg"' + 'alt="course image">' +
-            '</header>' +
-            '<div class="course-name">' +
-            '<p>' + this["Name"] + '</p>' +
-            '</div>' +
-            '<div class="provider-name">' +
-            '<div class="provider-name-prefix">Instructor</div>' + 
-            this["Course provider"] +
-            '</div>' +
-            '<div class="course-stats">' +
-            '<div class="stat">' +
-            '<div>' + '<div class="stat-rating">' + this["Rating"] + '&nbsp' + '<img src="images/star.png"></div></div>' +
-            '<div class="stat-desc">Average Rating</div>' +
-            '</div>' +
-            '<div class="stat">' +
-            '<div>' + this["Enrollment"] +'</div>' +
-            '<div class="stat-desc">Students Enrolled</div>' +
-            '</div>' +
-            '<div class="stat">' +
-            '<div>' + '&#x20B9;&nbsp' + this["Price"] + '</div>' +
-            '<div class="disc"><s>' + '&#x20B9;&nbsp' + this["Discount"].slice(13,17) + '</s></div>' +
-            '<div class="stat-desc">Price</div>' +
-            '</div>' +
-            '</div>' +
-            '</div>' +
-            '<div class="course-desc hidden">' +
-            '<p class="course-desc-small desc-show">' + this["Description"] + '</p>' +
-            '<div>' +
-            '<button onclick="btnclick(this)" class="button">Enroll Now</button>' +
-            '</div>' +
-            '</div>' +
-            '</article>';
-            $(courseList).appendTo("#business-card-list");
+            $(createCards(this)).appendTo("#business-card-list");
         });
 
         var MusicCourses = $(data).filter((i, n) => n.Category === "Music");
         $.each(MusicCourses, function(i, f) {
-            var courseList = 
-            '<article class="card">' +
-            '<div class="course-info">' +
-            '<header class="card-header">' +
-            '<img src="images/' + this["Image"] + '.jpeg"' + 'alt="course image">' +
-            '</header>' +
-            '<div class="course-name">' +
-            '<p>' + this["Name"] + '</p>' +
-            '</div>' +
-            '<div class="provider-name">' +
-            '<div class="provider-name-prefix">Instructor</div>' + 
-            this["Course provider"] +
-            '</div>' +
-            '<div class="course-stats">' +
-            '<div class="stat">' +
-            '<div>' + '<div class="stat-rating">' + this["Rating"] + '&nbsp' + '<img src="images/star.png"></div></div>' +
-            '<div class="stat-desc">Average Rating</div>' +
-            '</div>' +
-            '<div class="stat">' +
-            '<div>' + this["Enrollment"] +'</div>' +
-            '<div class="stat-desc">Students Enrolled</div>' +
-            '</div>' +
-            '<div class="stat">' +
-            '<div>' + '&#x20B9;&nbsp' + this["Price"] + '</div>' +
-            '<div class="disc"><s>' + '&#x20B9;&nbsp' + this["Discount"].slice(13,17) + '</s></div>' +
-            '<div class="stat-desc">Price</div>' +
-            '</div>' +
-            '</div>' +
-            '</div>' +
-            '<div class="course-desc hidden">' +
-            '<p class="desc-show">' + this["Description"] + '</p>' +
-            '<div>' +
-            '<button onclick="btnclick(this)" class="button">Enroll Now</button>' +
-            '</div>' +
-            '</div>' +
-            '</article>';
-            $(courseList).appendTo("#music-card-list");
+            $(createCards(this)).appendTo("#music-card-list");
         });
     });
+}
+
+function createCards(obj) {
+    var card =
+    '<article class="card">' +
+        '<div class="course-info">' +
+            '<header class="card-header">' +
+                '<img src="images/' + obj["Image"] + '.jpeg"' + 'alt="course image">' +
+            '</header>' +
+            '<div class="course-name">' +
+                '<p>' + obj["Name"] + '</p>' +
+            '</div>' +
+            '<div class="provider-name">' +
+                '<div class="provider-name-prefix">Instructor</div>' + 
+                obj["Course provider"] +
+            '</div>' +
+            '<div class="course-stats">' +
+                '<div class="stat">' +
+                    '<div>' + '<div class="stat-rating">' + obj["Rating"] + '&nbsp' + '<img src="images/star.png"></div></div>' +
+                    '<div class="stat-desc">Average Rating</div>' +
+                '</div>' +
+                '<div class="stat">' +
+                    '<div>' + obj["Enrollment"] +'</div>' +
+                    '<div class="stat-desc">Students Enrolled</div>' +
+                '</div>' +
+                '<div class="stat">' +
+                    '<div>' + '&#x20B9;&nbsp' + obj["Price"] + '</div>' +
+                    '<div class="disc"><s>' + '&#x20B9;&nbsp' + obj["Discount"].slice(13,17) + '</s></div>' +
+                    '<div class="stat-desc">Price</div>' +
+                '</div>' +
+            '</div>' +
+        '</div>' +
+        '<div class="course-desc hidden">' +
+            '<p class="desc-show">' + obj["Description"] + '</p>' +
+            '<div>' +
+                '<button onclick="btnclick(this)" class="button">Enroll Now</button>' +
+            '</div>' +
+        '</div>' +
+    '</article>';
+    return card;
 }
 
 $(document).on("scroll", function() {
